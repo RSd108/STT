@@ -54,18 +54,15 @@ namespace CSharpExamples
                 Console.WriteLine("Loading model...");
                 stopwatch.Start();
                 // sphinx-doc: csharp_ref_model_start
-                using (ISTT sttClient = new STT(model ?? "output_graph.pbmm"))
+                using (ISTT sttClient = new STT(model ?? @"C:\Users\rbharuth\Documents\GitHub\STT\native_client\dotnet\STTConsole\model\model.tflite"))
                 {
                 // sphinx-doc: csharp_ref_model_stop
                     stopwatch.Stop();
 
                     Console.WriteLine($"Model loaded - {stopwatch.Elapsed.Milliseconds} ms");
                     stopwatch.Reset();
-                    if (scorer != null)
-                    {
                         Console.WriteLine("Loading scorer...");
-                        sttClient.EnableExternalScorer(scorer ?? "kenlm.scorer");
-                    }
+                        sttClient.EnableExternalScorer(scorer ?? "large_vocabulary.scorer");
 
                     if(hotwords != null)
                     {
@@ -116,6 +113,6 @@ namespace CSharpExamples
             {
                 Console.WriteLine(ex.Message);
             }
-        }
+          }
     }
 }

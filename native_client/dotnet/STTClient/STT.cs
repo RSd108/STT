@@ -45,14 +45,14 @@ namespace STTClient
                 exceptionMessage = $"Cannot find the model file: {aModelPath}";
             }
 
-            if (exceptionMessage != null)
+            if (!string.IsNullOrEmpty(exceptionMessage))
             {
                 throw new FileNotFoundException(exceptionMessage);
             }
             var resultCode = NativeImp.STT_CreateModel(aModelPath,
                             ref _modelStatePP);
             EvaluateResultCode(resultCode);
-        }
+        }       
 
         /// <summary>
         /// Get beam width value used by the model. If SetModelBeamWidth was not
