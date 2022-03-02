@@ -12,7 +12,7 @@ defaults:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -26,3 +26,8 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Publish  
+      uses: brandedoutcast/publish-nuget@v2.5.2  
+      with:   
+        PROJECT_FILE_PATH: native_client/dotnet/STTClient/STTClient.csproj 
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
