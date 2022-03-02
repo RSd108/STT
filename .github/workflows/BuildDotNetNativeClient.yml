@@ -29,5 +29,5 @@ jobs:
     - name: Publish  
       uses: brandedoutcast/publish-nuget@v2.5.2  
       with:   
-        PROJECT_FILE_PATH: STTClient/STTClient.csproj 
+        PROJECT_FILE_PATH: native_client/dotnet/STTClient/STTClient.csproj 
         NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
