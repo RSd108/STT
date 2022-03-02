@@ -8,7 +8,7 @@
         /// <summary>
         /// Char of the current timestep.
         /// </summary>
-        public string Text;
+        public string? Text;
         /// <summary>
         /// Position of the character in units of 20ms.
         /// </summary>

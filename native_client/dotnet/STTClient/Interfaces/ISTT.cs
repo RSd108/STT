@@ -1,6 +1,7 @@
 ﻿using STTClient.Models;
 using System;
 using System.IO;
+using Stream = STTClient.Models.Stream;
 
 namespace STTClient.Interfaces
 {

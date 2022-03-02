@@ -12,6 +12,6 @@
         /// <summary>
         /// List of metada tokens containing text, timestep, and time offset.
         /// </summary>
-        public TokenMetadata[] Tokens { get; set; }
+        public TokenMetadata[]? Tokens { get; set; }
     }
 }

@@ -8,6 +8,6 @@
         /// <summary>
         /// List of candidate transcripts.
         /// </summary>
-        public CandidateTranscript[] Transcripts { get; set; }
+        public CandidateTranscript[]? Transcripts { get; set; }
     }
 }

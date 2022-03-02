@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using STTClient.Enums;
 using STTClient.Models;
+using Stream = STTClient.Models.Stream;
 
 namespace STTClient
 {
@@ -34,7 +35,7 @@ namespace STTClient
         /// <exception cref="ArgumentException">Thrown when the native binary failed to create the model.</exception>
         private unsafe void CreateModel(string aModelPath)
         {
-            string exceptionMessage = null;
+            string exceptionMessage = String.Empty;
             if (string.IsNullOrWhiteSpace(aModelPath))
             {
                 exceptionMessage = "Model path cannot be empty.";
